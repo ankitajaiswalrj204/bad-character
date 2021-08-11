@@ -1,0 +1,32 @@
+.items{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+     border: 2px solid green; 
+    margin:80px;
+
+    /* text-align: center;
+   justify-content: space-around; */
+}
+.paginationBtn{
+    /* border: 2px solid red; */
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+.paginationBtn a{
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    color: blue;
+    cursor: pointer;
+}
+/* .paginationActive{
+    color: white;
+   background-color: cadetblue;
+   
+} */

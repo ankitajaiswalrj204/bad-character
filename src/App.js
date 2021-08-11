@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import Header from './Header';
+import { fetchData } from './api';
+import { useEffect, useState } from 'react';
+import Character from './Character';
 function App() {
+  const [text,setText]=useState("");
+  const [data,setData]=useState([]);
+  useEffect(() => {
+    const getData=async()=>{
+  const result=await fetchData(text);
+  setData(result.data);
+  console.log(result);
+    }
+    getData();
+  }, [text]);
+
+  const getText=(text)=>{
+    setText(text);
+    console.log(text);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     {/* <h1>hello</h1> */}
+     <Header getText={getText} />
+     <Character data={data} />
     </div>
   );
 }
